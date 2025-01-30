@@ -1,4 +1,5 @@
 Chemical Name,SMILES Notation
+"Custom",[2H]C1(C(O1)([2H])[2H])[2H]
 Ethylene,CC
 Propylene,CC(C)
 EthyleneGlycol,CCO
@@ -117,7 +118,7 @@ Poly(vinyl n-hexyl ether),$CC(OCCCCCC)$
 Poly(3-methoxypropylene oxide),CC(OC)OC(OC)CO
 Polypentadiene,$CC=CC(C)$
 Poly(n-heptyl acrylate),$CC(C(=O)OCCCCCCC)$
-Poly(ε-caprolactone),OCCCCCC(=O)
+Poly(e-caprolactone),OCCCCCC(=O)
 Poly(n-nonyl acrylate),$CC(C(=O)OCCCCCCCCC)$
 Poly(n-hexyl acrylate),$CC(C(=O)OCCCCCC)$
 Poly(decamethylene adipate),OCCCCCCCCCCOC(=O)CCCCC(=O)
@@ -237,5 +238,4 @@ Poly(perfluorostyrene),$C(F)(F)C(F)(c1c(F)c(F)c(F)c(F)c1F)$
 "Poly(quinoxaline-2,7-diylcarbonylquinoxaline-7,2-diyl-1,4-phenylene)",c1nc2cc(ccc2nc1)C(=O)c3cc4nc(cnc4cc3)c1ccc(cc1)
 Poly(o-biphenylenemethane bis(4-phenyl)carbonate),Oc1ccc(cc1)c2c(cccc2)Cc3c(cccc3)c4ccc(cc4)OC(=O)
 "Poly[N,N'-(p,p'-oxydiphenylene)pyromellitimide]",N1C(=O)c2cc3C(=O)N(C(=O)c3cc2C1=O)c1ccc(cc1)Oc2ccc(cc2)
-"Custom",OCCO
 
