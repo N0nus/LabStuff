@@ -72,15 +72,15 @@ def generate_gaussian_input(polymer_name: str, config: Dict, xyz_coords: str):
 
 # Test Case
 TEST_CASE = {
-    "name": "Poly(ethylene glycol)",
-    "repeat_unit": "Custom",  # SMILES for the repeating unit of PEG
+    "name": "Oxirane-d4",  # Chemical name for the custom polymer
+    "repeat_unit": "Custom",  # SMILES for the repeating unit of Oxirane
     "n_units": 3,  # Number of repeating units
     "end_groups": {
-        "start": "[H]O",  # Hydroxyl group as the starting end group
-        "end": "O[H]"  # Hydroxyl group as the ending end group
+        "start": "[H]",  # Hydrogen as the starting end group
+        "end": "[H]"  # Hydrogen as the ending end group
     },
     "config": {
-        "title": "Polyethylene Glycol Chain",
+        "title": "Custom Oxirane Chain",  # Title for the molecule
         "method": "B3LYP",  # Computational method
         "basis_set": "3-21G",  # Basis set
         "charge": 0,  # Neutral molecule
@@ -90,6 +90,7 @@ TEST_CASE = {
     }
 }
 
+
 def main():
     try:
         repeat_units = load_chemicals("chemicals.csv")  # Load the chemicals from CSV
@@ -97,23 +98,18 @@ def main():
         
 
         # Build the polymer SMILES
-        try:
-            smiles = build_polymer_smiles(
-                case["repeat_unit"],
-                case["n_units"],
-                case["end_groups"],
-                repeat_units  # Pass the repeat_units dictionary
-            )
-            
-            # Convert SMILES to 3D coordinates
-            xyz = smiles_to_3d_coords(smiles)
-            
-            # Generate Gaussian input file for each chemical
-            generate_gaussian_input(case["name"], case["config"], xyz)
+        smiles = build_polymer_smiles(
+            case["repeat_unit"],
+            case["n_units"],
+            case["end_groups"],
+            repeat_units  # Pass the repeat_units dictionary
+        )
         
-        except Exception as e:
-            # Only print errors if something goes wrong
-            print(f"Error processing {case["name"]}: {str(e)}")
+        # Convert SMILES to 3D coordinates
+        xyz = smiles_to_3d_coords(smiles)
+        
+        # Generate Gaussian input file for each chemical
+        generate_gaussian_input(case["name"], case["config"], xyz)
     
     except Exception as e:
         # Catch any global exceptions and print the error
